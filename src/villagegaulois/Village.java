@@ -108,6 +108,46 @@ public class Village {
 	}
 	
 	
+	private Etal trouverVendeur(Gaulois gaulois) {
+		
+		Etal vetal = null;
+		for (int i = 0; i < etals.length; i++) {
+			if (etals[i].isEtalOccupe()&&(etals[i].getVendeur() == gaulois)) {
+				vetal = etals[i];
+			}
+		}
+		return vetal;
 	
 	}
-}
+	
+	
+	
+	
+	private String afficherMarche() {
+		StringBuilder chaine = new StringBuilder();
+		int nbEtalVide = 0;
+		for (int i = 0; i < etals.length; i++) {
+			if (etals[i].afficherEtal().equals("L'étal est libre")) {
+				nbEtalVide++;
+			} else {
+				chaine.append(etals[i].afficherEtal());
+			}
+		}
+
+		if (nbEtalVide != 0) {
+			chaine.append("il reste " + nbEtalVide + " étals non utilisés dans le marché.\n");
+		}
+		return chaine.toString();
+		
+			}
+	
+	
+	
+		}
+	
+	
+	
+	
+	
+	
+	}
